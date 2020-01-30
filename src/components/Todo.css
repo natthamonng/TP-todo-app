@@ -1,0 +1,45 @@
+li.todo {
+    background-color: #f4f4f4;
+    padding: 1em;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    box-shadow: 0 3px 3px 0 #adadad;
+    cursor: pointer;
+}
+
+input[type="checkbox"].todo-checkbox {
+    display: none;
+}
+
+label.todo-title {
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.todo-title:before {
+    content: '';
+    display: inline-block;
+    background: #575757;
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+    border-radius: 80%;
+    box-shadow: 1px 1px 0 0 #adadad;
+    border: 10px solid #fff; /* fill-in label:before with white color */
+    transition: border .3s ease;
+}
+
+.todo-checkbox:checked + .todo-title:before {
+    border-color: #fff;
+    border-width: 4px;
+}
+
+.todo-checkbox + .todo-title {
+    transition: color .7s ease;
+}
+
+/* line-through label when input is checked*/ 
+.todo-checkbox:checked + .todo-title {
+    color: #999999;
+    text-decoration: line-through;
+}

@@ -1,0 +1,29 @@
+form.add-todo-form {
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    box-shadow: 0 3px 3px 3px #adadad;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+div.add-todo-form-item {
+    margin: 5px;
+}
+
+input.add-todo-input {
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-bottom: 3px solid #dadada;
+}
+button.btn-add {
+    float: right;
+    border: none;
+    cursor: pointer;
+    padding:5px;
+    background-color: #fff;
+}
+
+
+

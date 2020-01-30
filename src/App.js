@@ -1,23 +1,53 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import TodoList from './components/TodoList'
+import AddTodoForm from './components/AddTodoForm'
 import './App.css'
 
 export class App extends Component {
+
+  static BASE_URL = "http://localhost:3000/api/v1/";
+
   state = {
     todosData: [],
     error: null
   }
 
   componentDidMount() {
+    this.getTodosData()
+  }
 
-    axios.get('http://localhost:3000/api/v1/todos')
+  //get todosData from the database
+  getTodosData(){
+    axios.get(`${App.BASE_URL}todos`)
       .then(res => {
         const todosData = res.data;
         console.log(todosData)
         this.setState({ todosData })
       })
       .catch(error => this.setState({error}))
+  }
+
+  handleAddTodo = ({title, content}) => {
+    axios.post(`${App.BASE_URL}todos`, {title, content})
+      .then(res => {
+        console.log(res)
+        console.log(res.data)
+        this.getTodosData() //call getTodosData for refresh todosData
+      })
+  }
+
+  toggleTodo = (id, done) => {
+    this.handleEditTodo(id, {done})
+  }
+
+  handleEditTodo = (id, {title, content, done}) => {
+    axios.patch(`${App.BASE_URL}todos/${id}`, {title, content, done})
+      .then(res => {
+        console.log(res)
+        console.log(res.data)
+        this.getTodosData() //call getTodosData for refresh todosData
+      })
   }
 
   render() {
@@ -30,9 +60,10 @@ export class App extends Component {
     return (
       <div className="App">
         <header>
-          <h1>Todo App</h1>
+          <h1>My Tasks</h1>
         </header>
-        <TodoList todosData={todosData} />
+        <TodoList todosData={todosData} toggleTodo={this.toggleTodo} />
+        <AddTodoForm handleAddTodo={this.handleAddTodo} />
     </div>
     )
   }

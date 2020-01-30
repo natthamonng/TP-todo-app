@@ -1,13 +1,35 @@
 .App {
-  color: white;
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  color: #575757;
+  max-height: 100vh;
+  padding: 0 1rem;
 }
 
 header {
-  text-align: center;
+  flex-grow: 0;
+  flex-shrink: 0;
+  text-align: left;
   padding: 10px;
+  margin-bottom: 1em;
 }
 
 .todo-list {
   list-style-type: none;
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 2em;
+}
+
+@media only screen and (min-width: 768px){
+  body {
+    background-color: #adadad50;
+  }
+  
+  .App {
+    background-color: #fff;
+    width: 50vw;
+    margin: auto;
+  }
 }

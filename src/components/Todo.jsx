@@ -1,11 +1,16 @@
 import React from 'react'
+import './Todo.css'
 
-function Todo({todo}) {
+function Todo({todo, toggleTodo}) {
+    function handleToggleTodoLocal() {
+        toggleTodo(todo.id, !todo.done)
+    }
+
     return (
         <>
-            <li>
-                <input type="checkbox" name="" id={todo.id} done={todo.done}/>
-                <label htmlFor={todo.id}>{' ' + todo.title}</label>
+            <li className={`todo ${todo.done ? 'done' : ''}`}>
+                <input type="checkbox" id={todo.id} className="todo-checkbox" onChange={handleToggleTodoLocal} />
+                <label htmlFor={todo.id} className="todo-title">{todo.title}</label><br/>
             </li>
         </>
     )
