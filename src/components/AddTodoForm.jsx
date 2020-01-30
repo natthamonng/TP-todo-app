@@ -1,6 +1,6 @@
 import React, {useRef} from 'react'
 import './AddTodoForm.css'
-import { FaPlusCircle } from "react-icons/fa";
+import { FaRegPlusSquare } from "react-icons/fa";
 
 function AddTodoForm({ handleAddTodo }) {
 
@@ -35,7 +35,7 @@ function AddTodoForm({ handleAddTodo }) {
                     <input className="add-todo-input add-todo-body" type="text" placeholder="Remarks" ref={todoContentRef} />
                 </div>
                 <button className="btn-add" type="submit" >
-                    <FaPlusCircle style={{fontSize: '30px', color:'#575757'}} />
+                    <FaRegPlusSquare style={{fontSize: '30px', color:'#575757'}} />
                 </button>
             </form>
         </>

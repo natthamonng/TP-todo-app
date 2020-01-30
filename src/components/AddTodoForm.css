@@ -7,6 +7,12 @@ form.add-todo-form {
     flex-shrink: 0;
 }
 
+input[type=text]:focus {
+    border: none;
+    box-shadow: 0 0 5px rgb(73, 93, 99);
+    outline: none;
+  }
+
 div.add-todo-form-item {
     margin: 5px;
 }
@@ -17,12 +23,18 @@ input.add-todo-input {
     border: none;
     border-bottom: 3px solid #dadada;
 }
+
 button.btn-add {
     float: right;
     border: none;
+    border-radius: 80%;
     cursor: pointer;
-    padding:5px;
+    padding: 2px;
     background-color: #fff;
+}
+
+button.btn-add:focus {
+    outline: none;
 }
 
 

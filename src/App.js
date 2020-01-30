@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
+import { Switch, Route } from 'react-router-dom';
 import axios from 'axios'
 import TodoList from './components/TodoList'
 import AddTodoForm from './components/AddTodoForm'
+import EditTodo from './components/EditTodo'
 import './App.css'
 
 export class App extends Component {
@@ -41,6 +43,7 @@ export class App extends Component {
     this.handleEditTodo(id, {done})
   }
 
+  
   handleEditTodo = (id, {title, content, done}) => {
     axios.patch(`${App.BASE_URL}todos/${id}`, {title, content, done})
       .then(res => {
@@ -60,8 +63,11 @@ export class App extends Component {
     return (
       <div className="App">
         <header>
-          <h1>My Tasks</h1>
+          <h1>Todo List</h1>
         </header>
+        <Switch>
+          <Route path='/edit_todo/:id' component={EditTodo} />
+        </Switch>
         <TodoList todosData={todosData} toggleTodo={this.toggleTodo} />
         <AddTodoForm handleAddTodo={this.handleAddTodo} />
     </div>
