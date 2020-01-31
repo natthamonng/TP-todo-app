@@ -15,8 +15,7 @@ header {
   margin-bottom: 1em;
 }
 
-.todo-list {
-  list-style-type: none;
+.main-container {
   flex-grow: 1;
   overflow-y: auto;
   margin-bottom: 2em;

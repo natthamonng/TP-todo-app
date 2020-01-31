@@ -4,6 +4,7 @@ li.todo {
     margin-bottom: 5px;
     border-radius: 5px;
     box-shadow: 0 3px 3px 0 #adadad;
+    list-style-type: none;
 }
 
 input[type="checkbox"].todo-checkbox {
@@ -41,13 +42,13 @@ label.todo-title {
     text-decoration: line-through;
 }
 
-button.btn-edit {
+button.btn {
     float: right;
     border: none;
     cursor: pointer;
     padding: 2px;
 }
 
-button.btn-edit:focus {
+button:focus {
     outline: none;
 }

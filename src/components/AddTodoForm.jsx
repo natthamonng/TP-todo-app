@@ -2,12 +2,12 @@ import React, {useRef} from 'react'
 import './AddTodoForm.css'
 import { FaRegPlusSquare } from "react-icons/fa";
 
-function AddTodoForm({ handleAddTodo }) {
+function AddTodoForm({ addTodoData }) {
 
     const todoTitleRef = useRef(null)
     const todoContentRef = useRef(null)
 
-    const handleAddTodoLocal = (event) => {
+    const handleAddTodo = (event) => {
         event.preventDefault();
         event.stopPropagation();
 
@@ -18,7 +18,7 @@ function AddTodoForm({ handleAddTodo }) {
 
         if (newTodoData.title === '') return
 
-        handleAddTodo(newTodoData);
+        addTodoData(newTodoData);
 
         todoTitleRef.current.value = ''
         todoContentRef.current.value = ''
@@ -26,7 +26,7 @@ function AddTodoForm({ handleAddTodo }) {
 
     return (
         <>
-            <form className="add-todo-form" onSubmit={handleAddTodoLocal}>
+            <form className="add-todo-form" onSubmit={handleAddTodo}>
                 <h3>Add new todo</h3>
                 <div className="add-todo-form-item">
                     <input className="add-todo-input add-todo-title" type="text" placeholder="Todo" ref={todoTitleRef} />
