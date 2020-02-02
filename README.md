@@ -1,3 +1,5 @@
+# TP-todo-app
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -66,4 +68,41 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-# TP-todo-app
+
+### Travail à réaliser
+
+L'application doit présenter au minimum trois interfaces à l'utilisateur, selon les modalités de votre choix :
+- Accès à la liste des Todos
+- Accès aux détails d'un Todo
+- Création/Modification/Suppression d'un Todo
+
+#### Elements demandés
+
+**Make it real**  
+Concevoir et développer l'application client avec les trois interfaces demandées.
+
+**Todo or not to do**  
+Le statut "terminé" des Todos doit pouvoir être modifié depuis la liste des todos comme depuis les details de l'un. De la même façon il doit pouvoir être modifié et supprimé au moins depuis les détails.
+
+**What's in the box**  
+Cliquer sur le titre d'un Todo depuis la liste doit afficher les détails de celui-ci.
+
+**Come as you are**  
+Afin d'être utilisable par le plus grand nombre, l'application web devra être adaptable (responsive), et au minimum suivre les critères d'accessibilité immédiats (WCAG level A).
+
+#### [Bonus]
+
+**Filtrage**  
+Proposer à l'utilisateur une interface claire sur la liste des posts afin de filtrer ceux-ci selon leur statut (afficher tout, n'afficher que les terminés, n'afficher que les en cours).
+
+**Too many things to do**  
+Gérer gracieusement les cas où trop de Todos sont enregistrés pour être tous chargés par défaut: pagination, infinite scroll, "Charger plus"...
+
+**My String is Rich...**  
+La description d'un Todo (le champ `content`) profiterait à pouvoir être du texte riche (gras, italique, images, liens, ...). Mettre en place un système permettant d'interpréter ce contenu pour le transformer en HTML valide. Un bon format pourrait être le Markdown.
+
+**...But my Users are Poor**  
+Si vous avez mis en place un format de contenu riche (cf bonus précédent), une élément de sympathie pour nos utilisateurs pourrait être de leur fournir un éditeur graphique.
+
+**Accepter, Suivant, Suivant**  
+Rendre l'application installable: PWA ou appli mobile hybride par exemple.
