@@ -1,0 +1,80 @@
+form.edit-todo-form {
+    padding: 1em;
+    background-color: #fff;
+    padding: 1em;
+    margin-bottom: 1em;
+    border: 1px solid #dadada;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px 0 #adadad;
+}
+
+.edit-todo-item {
+    margin-bottom: 1em;
+}
+
+input[type=checkbox].edit-todo-checkbox {
+    margin-left: 1.5em;
+    cursor: pointer;
+}
+
+.edit-todo-item label {
+    cursor: pointer;
+}
+
+input.edit-todo-input {
+    padding: 10px;
+    width: calc(100% - 1.5em);
+    border: none;
+    margin-left: 1.5em;
+    border-bottom: 3px solid #dadada;
+}
+
+input.edit-todo-input:hover {
+    border-bottom: 3px solid #90d2d8;
+}
+div.btn-group {
+    padding: 1em;
+    margin-bottom: 1em;
+    flex-grow: 0;
+    flex-shrink: 0;
+    border-top: 1px dotted #dadada;
+}
+
+button.btn-back {
+    float: left;
+}
+
+button.btn-back, button.btn-delete, button.btn-save {
+    color: #575757;
+    font-weight: bold;
+}
+
+button.btn-back:hover, button.btn-save:hover {
+    color: #90d2d8;
+}
+
+button.btn-delete:hover {
+    color: #f6a6b2;
+}
+
+h4 {
+    font-size: 1em;
+}
+
+.msg-date {
+    float: right;
+    margin-right: 1em;
+}
+
+.msg-date span {
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+input.edit-todo-checkbox {
+    margin-right: 3px;
+}
+

@@ -1,10 +1,15 @@
 li.todo {
-    background-color: #f4f4f4;
-    padding: 1em;
+    padding: 10px;
     margin-bottom: 5px;
+    border: 1px solid #dadada;
     border-radius: 5px;
-    box-shadow: 0 3px 3px 0 #adadad;
+    box-shadow: 0 3px 5px 0 #adadad;
     list-style-type: none;
+}
+
+li.todo:hover {
+    border: 1px solid #90d2d8;
+    box-shadow: 0 3px 5px 0 #90d2d8;
 }
 
 input[type="checkbox"].todo-checkbox {
@@ -20,33 +25,47 @@ label.todo-title {
 .todo-title:before {
     content: '';
     display: inline-block;
-    background: #575757;
-    height: 20px;
-    width: 20px;
-    margin-right: 10px;
+    background: #90d2d8;
+    height: 14px;
+    width: 14px;
+    margin: 0 10px;
     border-radius: 80%;
-    box-shadow: 1px 1px 0 0 #adadad;
-    border: 10px solid #fff; /* fill-in fake checkbox with white color */
+    box-shadow: 1px 1px 3px 2px #adadad;
+    border: 7px solid #fff; /* fill-in fake checkbox with white color */
     transition: border .2s ease;
 }
 
 /* Selects all .todo-title:before (fake checkbox) elements where the parent is a .done element */
 .done > .todo-title:before {
     border-color: #fff;
-    border-width: 4px;
+    border-width: 3px;
 }
 
 /* line-through label when input is checked*/ 
 .done  > .todo-title {
-    color: #999999;
+    color: #868686;
     text-decoration: line-through;
 }
 
-button.btn {
+button.btn-detail, button.btn-trash {
     float: right;
     border: none;
     cursor: pointer;
     padding: 2px;
+    color: #777777;
+    font-size: 18px;
+}
+
+button.btn-trash {
+    color: #fff;
+}
+
+button.btn-detail:hover {
+    color: 	#90d2d8;
+}
+
+button.btn-trash:hover {
+    color: #f6a6b2;
 }
 
 button:focus {

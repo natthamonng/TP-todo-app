@@ -1,0 +1,24 @@
+div.group-filter {
+    margin-left: 1em;
+    margin-bottom: 1em;
+}
+
+input[type="radio"].filter-radio {
+    display: none;
+}
+
+label.filter {
+    width: 100px;
+    margin-right: 2px;
+    padding: 3px 0;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    color: #575757;
+    font-size: 12px;
+}
+
+label.filter:hover, .filter-radio:checked + label.filter {
+    color: #fff;
+    background-color: #90d2d8;
+}

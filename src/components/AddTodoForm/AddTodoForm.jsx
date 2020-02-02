@@ -1,8 +1,8 @@
 import React, {useRef} from 'react'
 import './AddTodoForm.css'
-import { FaRegPlusSquare } from "react-icons/fa";
+import { FaPlusCircle } from "react-icons/fa";
 
-function AddTodoForm({ addTodoData }) {
+export default function AddTodoForm({ addTodoData }) {
 
     const todoTitleRef = useRef(null)
     const todoContentRef = useRef(null)
@@ -35,11 +35,9 @@ function AddTodoForm({ addTodoData }) {
                     <input className="add-todo-input add-todo-body" type="text" placeholder="Remarks" ref={todoContentRef} />
                 </div>
                 <button className="btn-add" type="submit" >
-                    <FaRegPlusSquare style={{fontSize: '30px', color:'#575757'}} />
+                    <FaPlusCircle />
                 </button>
             </form>
         </>
     )
 }
-
-export default AddTodoForm

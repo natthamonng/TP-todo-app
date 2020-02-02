@@ -1,17 +1,19 @@
 form.add-todo-form {
     padding: 1em;
-    margin-bottom: 1em;
+    margin: 1em;
+    border: 1px solid #dadada;
     border-radius: 5px;
-    box-shadow: 0 3px 3px 3px #adadad;
+    box-shadow: 0 3px 5px 0 #adadad;
     flex-grow: 0;
     flex-shrink: 0;
+    background-color: #fff;
 }
 
 input[type=text]:focus {
     border: none;
-    box-shadow: 0 0 5px rgb(73, 93, 99);
+    box-shadow: 0 0 5px #b7ded2;
     outline: none;
-  }
+}
 
 div.add-todo-form-item {
     margin: 5px;
@@ -24,13 +26,23 @@ input.add-todo-input {
     border-bottom: 3px solid #dadada;
 }
 
+input.add-todo-input:hover {
+    border-bottom: 3px solid #90d2d8;
+}
+
 button.btn-add {
     float: right;
     border: none;
     border-radius: 80%;
     cursor: pointer;
     padding: 2px;
+    font-size: 30px;
+    color: #777777;
     background-color: #fff;
+}
+
+button.btn-add:hover {
+    color: #90d2d8;
 }
 
 button.btn-add:focus {
