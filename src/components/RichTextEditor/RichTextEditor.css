@@ -1,0 +1,30 @@
+.editorContainer {
+    border: 1px solid #dadada;
+    padding: 0 1em 1em 0;
+}
+
+button.btn-editor {
+    color: #575757;
+    width: 3em;
+    margin: 2px;
+    padding: 2px;
+    border: none;
+    font-size: 10px;
+}
+
+button.btn-editor:hover {
+    color: #fff;
+    background-color: #90d2d8;
+} 
+
+.editor {
+    padding: 10px;
+    width: calc(100% - 1em);
+    border: none;
+    margin-left: 1em;
+    border-bottom: 3px solid #dadada;
+}
+
+.editor:hover {
+    border-bottom: 3px solid #90d2d8;
+}

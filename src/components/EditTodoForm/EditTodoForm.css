@@ -32,6 +32,7 @@ input.edit-todo-input {
 input.edit-todo-input:hover {
     border-bottom: 3px solid #90d2d8;
 }
+
 div.btn-group {
     padding: 1em;
     margin-bottom: 1em;
