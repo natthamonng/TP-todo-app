@@ -69,7 +69,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
-### Travail à réaliser
+## Travail à réaliser
 
 L'application doit présenter au minimum trois interfaces à l'utilisateur, selon les modalités de votre choix :
 - Accès à la liste des Todos
