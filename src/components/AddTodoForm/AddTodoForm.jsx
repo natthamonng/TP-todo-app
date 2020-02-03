@@ -1,11 +1,11 @@
 import React, {useRef} from 'react'
+import { FaPlusCircle } from "react-icons/fa"
 import './AddTodoForm.css'
-import { FaPlusCircle } from "react-icons/fa";
 
 export default function AddTodoForm({ addTodoData }) {
 
     const todoTitleRef = useRef(null)
-    const todoContentRef = useRef(null)
+    // const todoContentRef = useRef(null)
 
     const handleAddTodo = (event) => {
         event.preventDefault();
@@ -13,7 +13,7 @@ export default function AddTodoForm({ addTodoData }) {
 
         const newTodoData = {
             title: todoTitleRef.current.value,
-            content: todoContentRef.current.value
+            // content: todoContentRef.current.value
         }
 
         if (newTodoData.title === '') return
@@ -21,7 +21,7 @@ export default function AddTodoForm({ addTodoData }) {
         addTodoData(newTodoData);
 
         todoTitleRef.current.value = ''
-        todoContentRef.current.value = ''
+        // todoContentRef.current.value = ''
     }
 
     return (
@@ -31,9 +31,9 @@ export default function AddTodoForm({ addTodoData }) {
                 <div className="add-todo-form-item">
                     <input className="add-todo-input add-todo-title" type="text" placeholder="Todo" ref={todoTitleRef} />
                 </div>
-                <div className="add-todo-form-item">
+                {/* <div className="add-todo-form-item">
                     <input className="add-todo-input add-todo-body" type="text" placeholder="Remarks" ref={todoContentRef} />
-                </div>
+                </div> */}
                 <button className="btn-add" type="submit" >
                     <FaPlusCircle />
                 </button>

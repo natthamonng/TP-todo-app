@@ -1,4 +1,4 @@
-form.edit-todo-form {
+div.edit-todo-form {
     padding: 1em;
     background-color: #fff;
     padding: 1em;
@@ -10,6 +10,11 @@ form.edit-todo-form {
 
 .edit-todo-item {
     margin-bottom: 1em;
+}
+
+
+.edit-todo-item-remarks {
+    margin-top: 3em;
 }
 
 input[type=checkbox].edit-todo-checkbox {
@@ -51,11 +56,11 @@ button.btn-back, button.btn-delete, button.btn-save {
 }
 
 button.btn-back:hover, button.btn-save:hover {
-    color: #90d2d8;
+    color: #55aeb6;
 }
 
 button.btn-delete:hover {
-    color: #f6a6b2;
+    color: #d9534f;
 }
 
 h4 {

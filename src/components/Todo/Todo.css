@@ -1,10 +1,18 @@
 li.todo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     padding: 10px;
     margin-bottom: 5px;
     border: 1px solid #dadada;
     border-radius: 5px;
     box-shadow: 0 3px 5px 0 #adadad;
     list-style-type: none;
+}
+
+.click-space {
+    flex-grow: 1;
+    cursor: pointer;
 }
 
 li.todo:hover {
@@ -44,10 +52,12 @@ label.todo-title {
 /* line-through label when input is checked*/ 
 .done  > .todo-title {
     color: #868686;
+    font-weight: normal;
     text-decoration: line-through;
 }
 
 button.btn-detail, button.btn-trash {
+    
     float: right;
     border: none;
     cursor: pointer;
@@ -65,9 +75,16 @@ button.btn-detail:hover {
 }
 
 button.btn-trash:hover {
-    color: #f6a6b2;
+    color: #d9534f;
 }
 
 button:focus {
     outline: none;
+}
+
+small.msg-details {
+    padding-left: 8px;
+    color: #adadad;
+    font-size: 12px;
+    font-style: italic;
 }

@@ -1,0 +1,8 @@
+div.rich-text-view {
+    padding: 10px;
+    width: calc(100% - 1em);
+    border: none;
+    margin-left: 1em;
+    margin-bottom: 5px;
+    border-bottom: 3px solid #dadada;
+}

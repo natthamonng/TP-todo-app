@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import Todo from '../Todo/Todo'
-import './TodoList.css'
 import {FaCheckCircle, FaSpinner, FaTasks} from "react-icons/fa";
+import './TodoList.css'
+
 
 // Constant functions (be called for filter visible todo list)
 const dataFilters = {
@@ -21,17 +22,18 @@ export default function TodoList({todosData, toggleTodo, deleteTodoData}) {
         return <Todo key={todo.id} todo={todo} toggleTodo={toggleTodo} deleteTodoData={deleteTodoData} />
     })
 
+    
     return (
         <>
         <div className="group-filter">
             <input id="all" className="filter-radio" type="radio" name="radio" onClick={allList}/>
-            <label htmlFor="all" class="filter"><FaTasks/> All</label>
+            <label htmlFor="all" className="filter"><FaTasks/> All</label>
 
             <input id="active" className="filter-radio" type="radio" name="radio" onClick={activeList}/>
-            <label htmlFor="active" class="filter"><FaSpinner/> Active</label>
+            <label htmlFor="active" className="filter"><FaSpinner/> Active</label>
 
             <input id="completed" className="filter-radio" type="radio" name="radio"  onClick={completedList}/>
-            <label htmlFor="completed" class="filter"><FaCheckCircle/> Completed</label>
+            <label htmlFor="completed" className="filter"><FaCheckCircle/> Completed</label>
         </div>
         
         <ul className="todo-list main-container">

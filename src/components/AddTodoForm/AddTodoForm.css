@@ -27,7 +27,7 @@ input.add-todo-input {
 }
 
 input.add-todo-input:hover {
-    border-bottom: 3px solid #90d2d8;
+    border-bottom: 3px solid #55aeb6;
 }
 
 button.btn-add {

@@ -31,7 +31,7 @@ export default class App extends Component {
 
   //GET todosData from the database
   getTodosData(){
-    axios.get(`${App.BASE_URL}todos`)
+    axios.get(`${App.BASE_URL}todos/?limit=300`)
       .then(res => {
         const todosData = res.data
         console.log(todosData)
@@ -88,7 +88,8 @@ export default class App extends Component {
   }
 
   render() {
-    const {todosData, flashMsg} = this.state
+    const {todosData} = this.state
+    // const {todosData, flashMsg} = this.state
 
     if (!todosData) {
       return <p>Loading...</p>
@@ -100,7 +101,7 @@ export default class App extends Component {
         <Switch>
           <Route exact path="/">
             <Header/>
-            {/* <div class="flash-msg">
+            {/* <div className="flash-msg">
               { flashMsg !== null && <p>{flashMsg}</p> }
             </div> */}
             

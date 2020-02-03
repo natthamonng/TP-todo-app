@@ -24,13 +24,17 @@ export default function EditTodoForm({todosData, editTodo, toggleTodo, deleteTod
         return <PageNotFound />
     }
 
+    const handleTodoContent = (id, { content }) => {
+        todo.content = content;
+    }
+
     const handleEditTodo = (event) => {
         event.preventDefault();
         event.stopPropagation();
 
         const newTodoData = {
             title: todoTitleRef.current.value,
-            content: todoContentRef.current.value
+            content: todo.content//todoContentRef.current.value
         }
 
         if (newTodoData.title === '') return
@@ -47,7 +51,6 @@ export default function EditTodoForm({todosData, editTodo, toggleTodo, deleteTod
     }
 
     return (
-        
         <>
             <Header name="Edit todo" />
             <Link to='/'>
@@ -58,24 +61,23 @@ export default function EditTodoForm({todosData, editTodo, toggleTodo, deleteTod
             </Link>
             
             <div className="main-container">
-                <form className="edit-todo-form" onSubmit={handleEditTodo}>
+                <div className="edit-todo-form">
                     
                     <div className={`edit-todo-item ${todo.done ? 'done' : ''}`}>
                         <h4><FaCheckCircle /> <span>Todo status</span></h4>
                         <input className="edit-todo-checkbox" type="checkbox" id={todo.id} defaultChecked={todo.done} onChange={handleToggleTodo}/>
-                        <label htmlFor={todo.id}>{todo.done===true? 'Completed' : 'Active'}</label>                        
+                        <label htmlFor={todo.id}>{todo.done===true? 'Completed' : 'Active'}</label>
                     </div>
 
                     <div className="edit-todo-item">
                         <h4><FaThList /> <span>Title</span></h4>
                         <input className="edit-todo-input" type="text" defaultValue={todo.title} ref={todoTitleRef}/>
                     </div>
-                    <div className="edit-todo-item">
+                    <div className="edit-todo-item-remarks">
                         <h4><FaQuoteLeft /> <span>Remarks</span></h4>
-                        <RichTextEditor placeHolder="Remarks..." data={todo.content} defaultValue={todo.content} ref={todoContentRef} />
-                        {/* <input className="edit-todo-input" type="text" placeHolder="Remarks..." defaultValue={todo.content} ref={todoContentRef}/> */}
+                        <RichTextEditor placeHolder="Remarks..." todoID={todo.id} defaultValue={todo.content} ref={todoContentRef} handleTodoContent={handleTodoContent}/>
                     </div>
-                </form>
+                </div>
                 <div>
                     <small className="msg-date"><FaCalendarAlt/> <span>Created at: </span>{new Date(todo.createdAt).toLocaleString()}</small>
                 </div>
@@ -92,11 +94,11 @@ export default function EditTodoForm({todosData, editTodo, toggleTodo, deleteTod
                 </Modal.Header>
                 <Modal.Body>Woohoo, would you like to delete this todo?</Modal.Body>
                 <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
+                <Button variant="light" className="btn btn-outline-secondary" onClick={handleClose}>
                     Cancel
                 </Button>
                 <Link to='/'>
-                    <Button variant="danger" onClick={handleDeleteTodo}>
+                    <Button variant="light" className="btn btn-outline-danger" onClick={handleDeleteTodo}>
                         Delete
                     </Button>
                 </Link>
