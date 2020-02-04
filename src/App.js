@@ -92,7 +92,7 @@ export default class App extends Component {
     // const {todosData, flashMsg} = this.state
 
     if (!todosData) {
-      return <p>Loading...</p>
+      return <p className="msg-chill">Loading... <FaRegSmileWink/></p>
     }
 
     return (
@@ -116,6 +116,7 @@ export default class App extends Component {
             todosData.length !== 0 && 
                 <div className="msg-todo-left">You have {todosData.filter(todo => !todo.done).length} left to do.</div>
             }
+
             <AddTodoForm addTodoData={this.addTodoData} />
           </Route>
 

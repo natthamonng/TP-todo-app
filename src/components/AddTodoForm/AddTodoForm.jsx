@@ -27,16 +27,18 @@ export default function AddTodoForm({ addTodoData }) {
     return (
         <>
             <form className="add-todo-form" onSubmit={handleAddTodo}>
-                <h3>Add new todo</h3>
-                <div className="add-todo-form-item">
-                    <input className="add-todo-input add-todo-title" type="text" placeholder="Todo" ref={todoTitleRef} />
+                <h3 className="add-todo-form-title">Add new todo</h3>
+                <div className="add-todo-form-input-container">
+                    <div className="add-todo-form-item">
+                        <input className="add-todo-input add-todo-title" type="text" placeholder="Todo" ref={todoTitleRef} />
+                    </div>
+                    {/* <div className="add-todo-form-item">
+                        <input className="add-todo-input add-todo-body" type="text" placeholder="Remarks" ref={todoContentRef} />
+                    </div> */}
+                    <button className="btn-add" type="submit" >
+                        <FaPlusCircle />
+                    </button>
                 </div>
-                {/* <div className="add-todo-form-item">
-                    <input className="add-todo-input add-todo-body" type="text" placeholder="Remarks" ref={todoContentRef} />
-                </div> */}
-                <button className="btn-add" type="submit" >
-                    <FaPlusCircle />
-                </button>
             </form>
         </>
     )

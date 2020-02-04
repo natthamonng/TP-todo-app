@@ -1,0 +1,19 @@
+ul.pagination {
+    margin: 0 auto;
+    font-size: 12px;
+}
+
+li.page-item {
+    cursor: pointer;
+    margin-bottom: 1em;
+}
+
+div.page-link {
+    color: #575757;
+    padding: 5px 12px;
+}
+
+div.page-link:hover {
+    color: #fff;
+    background-color: #90d2d8;
+}

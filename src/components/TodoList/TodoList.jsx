@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import Todo from '../Todo/Todo'
+import Pagination from '../Pagination/Pagination'
 import {FaCheckCircle, FaSpinner, FaTasks} from "react-icons/fa";
 import './TodoList.css'
-
 
 // Constant functions (be called for filter visible todo list)
 const dataFilters = {
@@ -18,27 +18,44 @@ export default function TodoList({todosData, toggleTodo, deleteTodoData}) {
     const completedList = () => setActiveFilter('completed')
 
     const filterData = dataFilters[activeFilter](todosData)
-    const todoList = filterData.map(todo => {
+    
+    // State for pagination
+    const [currentPage, setCurrentPage] = useState(1)
+    const [todosPerPage] = useState(6)
+
+    // Get current todos
+    const indexOfLastTodo = currentPage * todosPerPage
+    const indexOfFirstTodo = indexOfLastTodo - todosPerPage
+    const currentTodos = filterData.slice(indexOfFirstTodo, indexOfLastTodo)
+
+    // Change page (called when page number clicked)
+    const paginate = pageNumber => setCurrentPage(pageNumber)
+
+    // Update view
+    const todoList = currentTodos.map(todo => {
         return <Todo key={todo.id} todo={todo} toggleTodo={toggleTodo} deleteTodoData={deleteTodoData} />
     })
-
     
     return (
         <>
-        <div className="group-filter">
-            <input id="all" className="filter-radio" type="radio" name="radio" onClick={allList}/>
-            <label htmlFor="all" className="filter"><FaTasks/> All</label>
+            <div className="group-filter">
+                <input id="all" className="filter-radio" type="radio" name="radio" onClick={allList}/>
+                <label htmlFor="all" className="filter"><FaTasks/> All</label>
 
-            <input id="active" className="filter-radio" type="radio" name="radio" onClick={activeList}/>
-            <label htmlFor="active" className="filter"><FaSpinner/> Active</label>
+                <input id="active" className="filter-radio" type="radio" name="radio" onClick={activeList}/>
+                <label htmlFor="active" className="filter"><FaSpinner/> Active</label>
 
-            <input id="completed" className="filter-radio" type="radio" name="radio"  onClick={completedList}/>
-            <label htmlFor="completed" className="filter"><FaCheckCircle/> Completed</label>
-        </div>
-        
-        <ul className="todo-list main-container">
-            { todoList }
-        </ul>
+                <input id="completed" className="filter-radio" type="radio" name="radio"  onClick={completedList}/>
+                <label htmlFor="completed" className="filter"><FaCheckCircle/> Completed</label>
+            </div>
+            
+            <ul className="todo-list main-container">
+                { todoList }
+            </ul>
+            
+            { filterData.length > 6 &&
+                <Pagination todosPerPage={todosPerPage} totalTodos={filterData.length} paginate={paginate} />
+            }
         </>
     )
 }

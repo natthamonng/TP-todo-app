@@ -1,6 +1,6 @@
 div.group-filter {
+    margin: 0;
     margin-left: 1em;
-    margin-bottom: 1em;
 }
 
 input[type="radio"].filter-radio {
@@ -9,10 +9,11 @@ input[type="radio"].filter-radio {
 
 label.filter {
     width: 100px;
+    margin: 0;
     margin-right: 2px;
     padding: 3px 0;
     text-align: center;
-    border: none;
+    border: 1px solid #dadada;
     border-radius: 5px;
     color: #575757;
     font-size: 12px;
@@ -20,5 +21,16 @@ label.filter {
 
 label.filter:hover, .filter-radio:checked + label.filter {
     color: #fff;
+    border: none;
     background-color: #90d2d8;
 }
+
+ul.todo-list.main-container {
+    margin-bottom: 0;
+}
+
+@media only screen and (min-width: 768px){
+    div.group-filter {
+        margin-top: 1em;
+    }
+} 

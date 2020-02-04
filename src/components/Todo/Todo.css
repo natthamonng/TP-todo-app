@@ -16,8 +16,8 @@ li.todo {
 }
 
 li.todo:hover {
-    border: 1px solid #90d2d8;
-    box-shadow: 0 3px 5px 0 #90d2d8;
+    border: 1px solid #dadada;
+    box-shadow: 0 3px 5px 0 #dadada;
 }
 
 input[type="checkbox"].todo-checkbox {

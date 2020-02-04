@@ -9,6 +9,16 @@ form.add-todo-form {
     background-color: #fff;
 }
 
+h3.add-todo-form-title {
+    font-size: 18px;
+}
+
+div.add-todo-form-input-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
 input[type=text]:focus {
     border: none;
     box-shadow: 0 0 5px #b7ded2;
@@ -16,7 +26,9 @@ input[type=text]:focus {
 }
 
 div.add-todo-form-item {
-    margin: 5px;
+    flex-grow: 1;
+    margin-right: 1em;
+
 }
 
 input.add-todo-input {
@@ -36,7 +48,7 @@ button.btn-add {
     border-radius: 80%;
     cursor: pointer;
     padding: 2px;
-    font-size: 30px;
+    font-size: 24px;
     color: #777777;
     background-color: #fff;
 }
