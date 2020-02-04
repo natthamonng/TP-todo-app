@@ -90,9 +90,9 @@ export default function EditTodoForm({todosData, editTodo, toggleTodo, deleteTod
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Warning</Modal.Title>
+                    <Modal.Title>Delete this todo?</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>Woohoo, would you like to delete this todo?</Modal.Body>
+                <Modal.Body>This action cannot be undone.</Modal.Body>
                 <Modal.Footer>
                 <Button variant="light" className="btn btn-outline-secondary" onClick={handleClose}>
                     Cancel
