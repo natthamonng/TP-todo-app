@@ -21,7 +21,7 @@ export default function TodoList({todosData, toggleTodo, deleteTodoData}) {
     
     // State for pagination
     const [currentPage, setCurrentPage] = useState(1)
-    const [todosPerPage] = useState(6)
+    const [todosPerPage] = useState(9)
 
     // Get current todos
     const indexOfLastTodo = currentPage * todosPerPage
@@ -53,7 +53,7 @@ export default function TodoList({todosData, toggleTodo, deleteTodoData}) {
                 { todoList }
             </ul>
             
-            { filterData.length > 6 &&
+            { filterData.length > todosPerPage &&
                 <Pagination todosPerPage={todosPerPage} totalTodos={filterData.length} paginate={paginate} />
             }
         </>
