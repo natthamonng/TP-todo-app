@@ -16,7 +16,7 @@ export default function TodoList({todosData, toggleTodo, deleteTodoData}) {
     const allList = () => setActiveFilter('all')
     const activeList = () => setActiveFilter('active')
     const completedList = () => setActiveFilter('completed')
-
+    debugger
     const filterData = dataFilters[activeFilter](todosData)
     
     // State for pagination
